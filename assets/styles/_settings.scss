@@ -1,0 +1,44 @@
+@font-face {
+  font-family: Fraunces-Bold;
+  src: url(../fonts/Fraunces/Fraunces_144pt_Soft-Bold.ttf);
+}
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url(../fonts/Montserrat/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: Fraunces-Bold;
+  src: url(../fonts/Fraunces/Fraunces_144pt_Soft-Bold.ttf);
+}
+
+$fontTitle: Fraunces-Bold;
+$fontText: Montserrat-Medium;
+$fontTextBold: Montserrat-Bold;
+
+$primaryColor: rgb(60, 128, 103);
+$primaryColorHover: rgb(18, 72, 52);
+$secondarycolor: rgb(242, 234, 226);
+$titleFontColor: rgb(28, 35, 43);
+$otherFontColor: rgb(107, 113, 137);
+$white: rgb(240, 240, 240);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: $secondarycolor;
+
+  @media screen and (max-width: 750px) {
+    height: auto;
+  }
+}

@@ -1,0 +1,141 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 750px) {
+    padding: 30px 20px;
+  }
+  .card-container {
+    min-width: 730px;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: $white;
+    border-radius: 15px;
+    overflow: hidden;
+
+    @media screen and (max-width: 750px) {
+      min-width: auto;
+      width: 100%;
+      grid-template-columns: 1fr;
+    }
+
+    .left-part {
+      .img-desktop {
+        display: block;
+        width: 100%;
+
+        @media screen and (max-width: 750px) {
+          display: none;
+        }
+      }
+
+      .img-mobile {
+        display: none;
+
+        @media screen and (max-width: 750px) {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    .right-part {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px;
+
+      > span {
+        font-family: $fontText;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: $otherFontColor;
+      }
+
+      h1 {
+        font-family: $fontTitle;
+        font-size: 2.5rem;
+        line-height: 40px;
+        color: $titleFontColor;
+        padding-right: 70px;
+        @media screen and (max-width: 750px) {
+          padding-right: 0;
+        }
+      }
+
+      p {
+        font-family: $fontText;
+        font-size: 0.875rem;
+        line-height: 25px;
+        color: $otherFontColor;
+        padding-right: 70px;
+
+        @media screen and (max-width: 750px) {
+          padding-right: 0;
+        }
+      }
+
+      .price-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: $primaryColor;
+
+        .promotion {
+          font-family: $fontTitle;
+          font-size: 2.5rem;
+        }
+
+        .original-price {
+          font-family: $fontText;
+          text-decoration: line-through;
+        }
+      }
+
+      .btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background: $primaryColor;
+        border: none;
+        border-radius: 10px;
+        padding: 20px 30px;
+        cursor: pointer;
+
+        &:hover::after {
+          opacity: 1;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $primaryColorHover;
+          border-radius: 10px;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+        }
+
+        img {
+          z-index: 1;
+        }
+
+        span {
+          font-family: $fontTextBold;
+          font-size: 1.065rem;
+          color: $white;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
